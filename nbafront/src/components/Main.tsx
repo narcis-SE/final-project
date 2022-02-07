@@ -1,8 +1,9 @@
-import { fetchNbaNews } from '../services/NbaApiServices';
-import { useState, useEffect } from 'react';
-import { News } from '../models/News';
-import { Header } from './Header';
-import { ArticleList } from './ArticleList';
+import { fetchNbaNews } from "../services/NbaApiServices";
+import { useState, useEffect } from "react";
+import { News } from "../models/News";
+import { Header } from "./Header";
+import { ArticleList } from "./ArticleList";
+import Generator from "./generator";
 
 
 interface NewsProp{
@@ -26,6 +27,7 @@ export const Main = () => {
             <Header/>
             {/* Could be a component herefor nav links and header stuff */}
             <ArticleList articles={articles}/>
+            <Generator/>
         </div>
     )
 }
