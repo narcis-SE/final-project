@@ -1,8 +1,8 @@
-import { fetchNbaNews } from "../services/NbaApiServices";
-import { useState, useEffect } from "react";
-import { News } from "../models/News";
-import { Header } from "./Header";
-import { ArticleList } from "./ArticleList";
+import { fetchNbaNews } from '../services/NbaApiServices';
+import { useState, useEffect } from 'react';
+import { News } from '../models/News';
+import { Header } from './Header';
+import { ArticleList } from './ArticleList';
 
 
 interface NewsProp{

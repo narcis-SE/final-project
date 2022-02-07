@@ -11,3 +11,4 @@ export function fetchNbaNews():Promise<News[]>{
     })
     .then (response=> response.data)
 }
+
