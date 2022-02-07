@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+.Articles{
+display: flex;
+font-family: 'Noto Serif', serif;
+}
+
+.container{
+    flex-basis: 100%;
+    padding-right: 7px;
+    border: 3px solid black;
+    padding: 10px;
+    margin-block: 10px;
+    width: 27em;
+    background-color: rgba(245, 188, 30, 0.801);
+
+}
+
+.container:hover{
+    transform: scale(1.04);
+}
+
+.container a{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+.container a:hover{
+    color: blue;
+}
