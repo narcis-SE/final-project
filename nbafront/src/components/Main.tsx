@@ -23,7 +23,6 @@ export const Main = () => {
 
     return(
         <div className="Main">
-            <h1> HI</h1>
             <Header/>
             {/* Could be a component herefor nav links and header stuff */}
             <ArticleList articles={articles}/>

@@ -1,0 +1,18 @@
+.Header{
+    display: flex;
+}
+.Header h1{
+    width: 33vw;
+}
+
+nav{
+    width: 33vw;
+}
+
+.logo{
+    width: 33vw;
+}
+
+img{
+    float: right;
+}

@@ -1,5 +1,6 @@
 import { News } from "../models/News";
 import { Articles } from "./Articles";
+import "./ArticleList.css"
 
 export interface Props{
     articles: News[]

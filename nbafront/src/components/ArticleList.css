@@ -1,0 +1,7 @@
+.ArticleList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    border: 1px solid red;
+}
