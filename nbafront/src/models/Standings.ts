@@ -1,28 +1,31 @@
 export interface Data {
-    standings: Standings[];
+    response: Standings[];
 }
 
 export interface Standings {
-    teamID: number;
-    win: number;
-    loss: number;
-    gamesBehind: number;
-    seasonYear: number;
-    confrence: Confrence;
-    division: Division;
+    position: number;
+    group: Group;
+    team: Team;
+    games: Games;
 }
 
-export interface Confrence {
+export interface Group {
     name: string;
-    rank: number;
-    win: number;
-    loss: number;
 }
 
-export interface Division {
+export interface Team {
     name: string;
-    rank: number;
-    win: number;
-    loss: number;
-    GamesBehind: number;
+}
+
+export interface Games {
+    win: Win;
+    lose: Lose;
+}
+
+export interface Win {
+    total: number;
+}
+
+export interface Lose {
+    total: number;
 }
