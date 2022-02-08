@@ -1,0 +1,13 @@
+.answerForm {
+    border: 2px solid black;
+}
+
+.rightAnswer {
+    border: 2px solid green;
+    background-color: gray;
+}
+
+.wrongAnswer {
+    border: 2px solid red;
+    background-color: gray;
+}
