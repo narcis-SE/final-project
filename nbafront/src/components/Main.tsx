@@ -4,6 +4,8 @@ import { News } from "../models/News";
 import { Header } from "./Header";
 import { ArticleList } from "./ArticleList";
 import Generator from "./generator";
+import { Standings } from "../models/Standings";
+import { fetchStandings } from "../services/StandingsServices";
 
 
 interface NewsProp{
@@ -14,6 +16,17 @@ interface NewsProp{
 
 export const Main = () => {
     const[articles, setArticle] = useState<News[]>([]);
+    // const[standings, setStandings] = useState<Standings[]>([]);
+
+    // var cron = require('node-cron');
+    
+    // cron.schedule('*/5 * * * *', () => {
+    //     fetchStandings().then(
+    //         standings=>setStandings(standings)
+    //     )
+    //     console.log(standings);
+    // });
+
 
     useEffect(()=>{
         fetchNbaNews().then(
