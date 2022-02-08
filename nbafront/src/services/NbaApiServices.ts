@@ -9,6 +9,7 @@ export function fetchNbaNews():Promise<News[]>{
             'rapidapi-key': apiKey
         }
     })
-    .then (response=> response.data)
+    .then(response=> response.data)
 }
+
 

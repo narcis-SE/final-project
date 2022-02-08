@@ -5,6 +5,7 @@ import { Header } from "./Header";
 import { ArticleList } from "./ArticleList";
 import Generator from "./generator";
 import { Standings } from "../models/Standings";
+import { fetchStandings } from "../services/StandingsServices";
 
 
 interface NewsProp{
@@ -15,9 +16,26 @@ interface NewsProp{
 
 export const Main = () => {
     const[articles, setArticle] = useState<News[]>([]);
-    
+    const[standings, setStandings] = useState<Standings[]>([])
     
 
+  
+    useEffect(()=>{
+        fetchStandings().then(
+            standings=>setStandings(standings)
+        )
+        console.log(standings)
+    }, [])
+
+    
+    // useEffect(()=>{ 
+    //     const interval = setInterval(()=>{
+    //         fetchStandings().then(
+    //             standings=>setStandings(standings)
+    //         )
+    //         console.log(standings);
+    //     }, 60000);
+    // }, [])
 
     useEffect(()=>{
         fetchNbaNews().then(
