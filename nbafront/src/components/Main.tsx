@@ -16,10 +16,9 @@ interface NewsProp{
 
 export const Main = () => {
     const[articles, setArticle] = useState<News[]>([]);
-    // const[standings, setStandings] = useState<Standings[]>([]);
+    const[standings, setStandings] = useState<Standings[]>([]);
 
     // var cron = require('node-cron');
-    
     // cron.schedule('*/5 * * * *', () => {
     //     fetchStandings().then(
     //         standings=>setStandings(standings)
@@ -27,6 +26,23 @@ export const Main = () => {
     //     console.log(standings);
     // });
 
+  
+    useEffect(()=>{
+        fetchStandings().then(
+            standings=>setStandings(standings)
+        )
+        console.log(standings)
+    }, [])
+
+    
+    // useEffect(()=>{ 
+    //     const interval = setInterval(()=>{
+    //         fetchStandings().then(
+    //             standings=>setStandings(standings)
+    //         )
+    //         console.log(standings);
+    //     }, 60000);
+    // }, [])
 
     useEffect(()=>{
         fetchNbaNews().then(
