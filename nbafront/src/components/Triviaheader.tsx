@@ -1,6 +1,7 @@
 import React, {useEffect, useState, FormEvent} from 'react';
 import "./triviaheader.css"
 
+
 function Header(){
     let headPicture = "https://www.freewebheaders.com/wp-content/gallery/basketball/basketball-rims-header.jpg"
     const [picture, setPicture] = useState
