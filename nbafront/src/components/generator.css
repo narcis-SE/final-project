@@ -278,3 +278,31 @@
             }
         }
 
+@media screen and (max-width: 768px) {
+
+    .rightAnswerHolder {
+        width: 75%;
+    }
+    #questionAnswer{
+        flex-direction: column;
+    }
+    .question{
+        width: 100%;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    #answer{
+        width: 100%;
+    }
+    .answer{
+        width: 100%;
+    }
+    .blurDiv{
+        margin-top: 15px;
+    }
+    .gif{
+        margin-right: 15px;
+    }
+}

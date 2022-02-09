@@ -25,11 +25,11 @@ export const Main = () => {
 
 
 
-    // useEffect(()=>{
-    //     fetchStandings().then(
-    //         standings=>setStandings(standings)
-    //     )
-    // }, [])
+    useEffect(()=>{
+        fetchStandings().then(
+            standings=>setStandings(standings)
+        )
+    }, [])
 
     // console.log(standings[0]);
     

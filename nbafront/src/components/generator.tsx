@@ -126,11 +126,13 @@ function nextQuestion() {
                                             <div> <img className="actualPlayer"src={actualPicture} alt="Player Photo" /> </div>
                                         </div>
                                     </div>
-                :
+                : userAnswer ? 
                                     <div className="wrongAnswer">
                                         <h1>Air Ball! The correct answer was {actualAnswer}</h1>
                                         <img src="./airballGif.webp" alt="" className="gif"/>
-                                    </div>
+                                    </div> 
+                                    :
+                                    <div></div>
                                 }
                 </div>
                     
