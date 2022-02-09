@@ -1,7 +1,11 @@
 .ArticleList{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-left: 10px;
+    padding-left: 10px; */
     border: 1px solid red;
+}
+
+.ArticleList h1{
+    padding: 100px;
 }
