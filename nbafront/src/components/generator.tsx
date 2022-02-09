@@ -18,6 +18,8 @@ function Generator() {
     const [rightAnswer, setRightAnswer] = useState(false);
     const [scoreCounter, setScoreCounter] = useState(0);
     const [hint, setHint] = useState("");
+    
+    const [display, setDisplay] = useState("wrongAnswer");
 
 
     useEffect( ()=> {
@@ -37,6 +39,7 @@ function Generator() {
         setActualPicture(randomQuestion.answer[1].image);
         setHint(randomQuestion.hint);
         setUserAnswer("");
+        setDisplay("wrongAnswer")
         setWaitingForAnswer(true);
         setRightAnswer(false);
     };
@@ -58,6 +61,7 @@ function Generator() {
             setScoreCounter(scoreCounter + 1)
         } else {
             setRightAnswer(false);
+            setDisplay("show")
         }
     }
 
@@ -127,7 +131,7 @@ function nextQuestion() {
                                         </div>
                                     </div>
                 : userAnswer ? 
-                                    <div className="wrongAnswer">
+                                    <div className={display}>
                                         <h1>Air Ball! The correct answer was {actualAnswer}</h1>
                                         <img src="./airballGif.webp" alt="" className="gif"/>
                                     </div> 
