@@ -30,6 +30,7 @@ export const Main = () => {
             standings=>setStandings(standings.slice(0,30))
         )
     }, [])
+
     // useEffect(()=>{ 
     //     const interval = setInterval(()=>{
     //         fetchStandings().then(

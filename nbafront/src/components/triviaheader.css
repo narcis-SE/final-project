@@ -5,6 +5,10 @@ display: flex;
 flex-direction: row;
 }
 
+.wholeBackground{
+    background: firebrick;
+}
+
 .column1 {
     border: solid 5px linear-gradient(to bottom right, #2d3436, black);
     height: 300px;
@@ -73,8 +77,8 @@ flex-direction: row;
 }
 
 .midTopDiv {
-    margin-top: 160px;
-    height: 70%;
+    margin-top: 90px;
+    height: 73%;
     border: solid 5px white;
     border-radius: 10px;
 }
@@ -91,4 +95,5 @@ flex-direction: row;
 
 .middlePicture {
     width: 100%;
+    height: 100%;
 }

@@ -118,8 +118,7 @@ function nextQuestion() {
 
                 }
                 </div>
-                                {
-                                    rightAnswer? 
+                                {rightAnswer? 
                                     <div className="rightAnswerHolder animate__animated animate__bounceInUp ">
                                         <div className="rightAnswer">
                                             <h1 className="correctAnswer">Score!!</h1>
@@ -129,7 +128,8 @@ function nextQuestion() {
                                     </div>
                 :
                                     <div className="wrongAnswer">
-                                        <h1>Wrong Answer</h1>
+                                        <h1>Air Ball! The correct answer was {actualAnswer}</h1>
+                                        <img src="./airballGif.webp" alt="" className="gif"/>
                                     </div>
                                 }
                 </div>
