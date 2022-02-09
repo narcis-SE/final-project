@@ -53,7 +53,7 @@ export const Main = () => {
             <Header/>
             {/* Could be a component herefor nav links and header stuff */}
             <ArticleList articles={articles}/>
-            <StandingsList standings={standings}/>
+            <StandingsList standings={standings}/>          
             <Generator/>
         </div>
     )
