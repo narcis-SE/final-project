@@ -1,5 +1,9 @@
 export interface Data {
-    response: Standings[];
+    response: [];
+}
+
+export interface Response{
+    another: Standings[]
 }
 
 export interface Standings {
