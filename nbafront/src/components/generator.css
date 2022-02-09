@@ -20,6 +20,8 @@
 .rightAnswerHolder {
     width: 100%;
     border: 3px solid white;
+    margin-left: 55px;
+
 }
 
 .rightAnswer {
@@ -43,7 +45,7 @@
     height: 300px;
     width: 70%;
     border-radius: 40px;
-    
+    margin-right: 80px;
 }
 
 .hint {
@@ -75,10 +77,12 @@
     font-family: Lora;
     color: rgb(188, 223, 188);
     font-size: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .wrongAnswer {
-    display: none;
+    display: block;
     border: 2px solid red;
     background-color: gray;
 }
@@ -119,9 +123,12 @@
 .blurWords 
 
 .answerModal {
-
     border: solid 5px yellow;
     width: 50%;
+}
+
+.gif{
+    margin-right: 105px;
 }
 
 #questionAnswer {

@@ -25,12 +25,14 @@ export const Main = () => {
 
 
 
-    useEffect(()=>{
-        fetchStandings().then(
-            standings=>setStandings(standings)
-        )
-    }, [])
-    console.log(standings[0]);
+    // useEffect(()=>{
+    //     fetchStandings().then(
+    //         standings=>setStandings(standings)
+    //     )
+    // }, [])
+
+    // console.log(standings[0]);
+    
     // useEffect(()=>{ 
     //     const interval = setInterval(()=>{
     //         fetchStandings().then(
