@@ -1,13 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Caveat&family=Lora:ital,wght@1,700&family=Merriweather&family=Space+Grotesk:wght@300&display=swap');
+.wholeBackground {
+
+    height: 100%;
+}
+
+/* .underHeader {
+    height: 200px;
+    width: 1140px;
+    border: solid 3px red;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://media.istockphoto.com/photos/basketball-player-makes-slam-dunk-picture-id539208441?k=20&m=539208441&s=612x612&w=0&h=vwkRKbqLc35zfA5DVI_h58-a7jN9_ixbcfyKS4hfuUM=");
+} */
 .answerForm {
     border: 2px solid black;
 }
 
+
+.rightAnswerHolder {
+    width: 100%;
+    border: 3px solid white;
+}
+
 .rightAnswer {
-    border: 2px solid green;
-    background-color: gray;
+
+    border: 3px solid white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 50px #fff,      /* inner white */
+      inset 20px 0 80px green,   /* inner left magenta short */
+      inset -20px 0 80px green,  /* inner right cyan short */
+      inset 20px 0 300px rgb(0, 14, 0),  /* inner left magenta broad */
+      inset -20px 0 300px green, /* inner right cyan broad */
+      0 0 50px #fff,            /* outer white */
+      -10px 0 80px green,        /* outer left magenta */
+      10px 0 80px #0ff;         /* outer right cyan */
+}
+
+.actualPlayer {
+    height: 300px;
+    width: 70%;
+    border-radius: 40px;
+    
+}
+
+.hint {
+    padding-right: 35px;
+    font-family: Lora;
+    font-size: 20px;
+    text-align: center;
+    /* height: 40px;
+    width: 40px; */
+    border-radius: 100px;
+    /* position: fixed; */
+    top: 50vh;
+    left: 50vw;
+    /* animation: spinBall 00009s linear infinite; */
+    box-shadow:
+    inset 0 0 50px #fff,      /* inner white */
+    inset 20px 0 80px orange,   /* inner left magenta short */
+    inset -20px 0 80px orange,  /* inner right cyan short */
+    inset 20px 0 300px rgb(0, 14, 0),  /* inner left magenta broad */
+    inset -20px 0 300px orange, /* inner right cyan broad */
+    0 0 50px #fff,            /* outer white */
+    -10px 0 80px orange,        /* outer left magenta */
+    10px 0 80px #0ff;         /* outer right cyan */
+}
+
+
+
+.correctAnswer {
+    font-family: Lora;
+    color: rgb(188, 223, 188);
+    font-size: 100px;
 }
 
 .wrongAnswer {
+    display: none;
     border: 2px solid red;
     background-color: gray;
 }
+
+.question {
+    /* float: left; */
+    border: solid 2px white;
+    /* height: 400px; */
+    width: 50%;
+    text-align: left;
+    padding-left: 20px;
+    font-family: Lora;
+    color: rgb(226, 114, 40);
+    font-size: 70px;
+    background-image: linear-gradient(to bottom right, #2d3436, black);
+}
+.blurDiv {
+    background-image: linear-gradient(to bottom right, #2d3436, rgb(26, 26, 26));
+    height: 350px;
+    border: solid 20px gray;;
+    filter:blur(4px);
+    -o-filter:blur(4px);
+    -ms-filter:blur(4px);
+    -moz-filter:blur(4px);
+    -webkit-filter:blur(4px);
+    animation: wave 2s cubic-bezier( 0.36, 0.36, 0.36, 0.36) infinite;
+    transform: translate3d(0, 0, 0);
+}
+@keyframes blueDiv {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 5000% 0; 
+    }
+  }
+
+.blurWords 
+
+.answerModal {
+
+    border: solid 5px yellow;
+    width: 50%;
+}
+
+#questionAnswer {
+    /* height: 450px; */
+    border: solid 2px white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#scoreCounter {
+    float: right;
+    color: white;
+    text-align: right;
+    padding-right: 35px;
+    font-family: Lora;
+    font-size: 100px;
+    text-align: center;
+    height: 120px;
+    width: 100px;
+    border-radius: 50%;
+  
+    top: 50vh;
+    left: 50vw;
+
+    box-shadow:
+    inset 0 0 50px rgb(228, 112, 65),      
+    inset 20px 0 80px rgb(228, 112, 65),   
+    inset -20px 0 80px rgb(228, 112, 65),  
+    inset 20px 0 300px rgb(0, 14, 0),  
+    inset -20px 0 300px rgb(228, 112, 65), 
+    0 0 50px rgb(228, 112, 65), 
+    -10px 0 80px rgb(228, 112, 65),       
+    10px 0 80px #0ff;  
+  border-radius: 50%;
+
+  animation: bounce 1.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 200px, 0); }
+}
+
+
+
+@-webkit-keyframes bounce {
+  from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  to   { -webkit-transform: translate3d(0, 200px, 0); transform: translate3d(0, 200px, 0); }
+
+}
+  
+@keyframes bounce {
+    from { transform: translate3d(0, 0, 0);     }
+    to   { transform: translate3d(0, 2px, 0); }
+  }
+
+#scoreCounter:hover {
+    transform: scale(1.2);
+}
+
+
+.answerForm {
+    /* border: solid 2px purple; */
+    width: 100%;
+    height: 50%;
+}
+
+.form-group {
+    background-image: linear-gradient(to bottom right, #2d3436, rgb(26, 26, 26));
+    height: 100px;
+    box-sizing: border-box; 
+}
+
+#answer {
+    background-image: linear-gradient(to bottom right, #2d3436, rgb(26, 26, 26));
+    text-align: center;
+    float: left;
+    height: 90%;
+    width: 48%;
+    color: green;
+    font-size: 50px;
+    border-radius: 10px;
+}
+#answer:hover {
+    transform: scale(1.2);
+    transition : .5s;
+}
+
+.answer {
+    background-image: linear-gradient(to bottom right, #2d3436, rgb(26, 26, 26));
+    text-align: center;
+    float: right;
+    height: 90%;
+    width: 48%;
+    font-size: 35px;
+    color: green;
+    font-family: Lora;
+    padding-right: 10px;
+    border-radius: 10px;
+    
+}
+
+.answer:hover {
+    background-image: linear-gradient(to bottom right, rgb(13, 238, 13), green);
+    border-radius: 50px;
+    transform: scale(1.2);
+    transition : .5s;
+    color: white;
+}
+
+
+
+
+          
+        .ball {
+            float: left;
+            color: black;
+            padding-left: 55px;
+            font-family: Lora;
+            font-size: 25px;
+            text-align: center;
+            height: 120px;
+            width: 120px;
+            border-radius: 100px;
+            /* position: fixed; */
+            top: 50vh;
+            left: 50vw;
+            animation: spinBall 00009s linear infinite;
+            box-shadow:
+            inset 0 0 50px #fff,      /* inner white */
+            inset 20px 0 80px orange,   /* inner left magenta short */
+            inset -20px 0 80px orange,  /* inner right cyan short */
+            inset 20px 0 300px rgb(0, 14, 0),  /* inner left magenta broad */
+            inset -20px 0 300px orange, /* inner right cyan broad */
+            0 0 50px #fff,            /* outer white */
+            -10px 0 80px orange,        /* outer left magenta */
+            10px 0 80px #0ff;         /* outer right cyan */
+        }
+          
+        @keyframes spinBall {
+            50% {
+                transform: rotate(45deg);
+            }
+        }
+
