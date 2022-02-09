@@ -3,6 +3,7 @@ import axios, { Axios } from 'axios';
 import {fetchQuestions} from "../services/TriviaServices";
 import {Question} from "../models/Question";
 import './generator.css';
+import 'animate.css';
 
 
 function Generator() {
@@ -15,6 +16,7 @@ function Generator() {
     const [waitingForAnswer, setWaitingForAnswer] = useState(true);
     const [rightAnswer, setRightAnswer] = useState(false);
     const [scoreCounter, setScoreCounter] = useState(0);
+    const [hint, setHint] = useState("");
 
 
     useEffect( ()=> {
@@ -27,9 +29,12 @@ function Generator() {
     function randomGenerator() {
         setRandomNum(Math.floor(Math.random() * questionArray.length));
         let randomQuestion = questionArray[randomNum];
+        console.log(randomQuestion);
+        
         setOneQuestion(randomQuestion.question);
         setActualAnswer(randomQuestion.answer[0].name);
-        setActualPicture(randomQuestion.answer[1].image)
+        setActualPicture(randomQuestion.answer[1].image);
+        setHint(randomQuestion.hint);
         setUserAnswer("");
         setWaitingForAnswer(true);
         setRightAnswer(false);
@@ -55,51 +60,88 @@ function Generator() {
         }
     }
 
+function nextQuestion() {
+
+}
+
 
     return(
-        <div>
+        <div className="wholeBackground">
 
-            <div>
-                <button onClick={randomGenerator}> Random Question Generator </button>
-                <span> {oneQuestion} </span>
+            <div className="underHeader">
+
+
+                <button className="ball" 
+                        onClick={randomGenerator}> Random Question Generator 
+                </button>
+                <div id="scoreCounter">{scoreCounter}</div>
             </div>
-            <div>
-                <span>{scoreCounter}</span>
-            </div>
-            <div>
+
+
+            
+
+            
+            {/* FlexBox Parent */}
+            <div id="questionAnswer">
+                {/* Question FlexBox */}
+                <div className="question">
+                    {oneQuestion} 
+                        <button className="hint" 
+                            onClick={() => setHint(hint)}>
+                            Need A Hint???
+                        </button>
+                </div>
+            {/* Answer FlexBox */}
+                <div className="answerModal">
+                <div>
                 {
                     waitingForAnswer? 
                         <div className="answerForm">
                             <form onSubmit={SubmitHandler} action="localhost:3999/game" method="POST">
-                                <div className="form-group">
-                                    <label>Answer</label>
+                                <div className="form-group ">
+                        
                                         <input
                                             type="text"
                                             id="answer"
                                             name="answer"
-                                            placeholder="Enter answer"
+                                            placeholder="????????"
                                             onChange={(e) => setUserAnswer(e.target.value)}
                                         />
-                                        <button>Submit Answer</button>
+                                        <button className="answer">Submit Answer</button>
                                 </div>
+                                <div className="blurDiv"></div>
                             </form>
                         </div> :
-                        <div className="answerModal">
-                            {
-                                rightAnswer? 
-                                    <div className="rightAnswer">
-                                        <h1>Correct Answer</h1>
-                                        <div>{actualAnswer}</div>
-                                        <div> <img src={actualPicture} alt="Player Photo" /> </div>
-                                    </div> :
+                        <div></div>
+                        
+
+                }
+                </div>
+                                {
+                                    rightAnswer? 
+                                    <div className="rightAnswerHolder animate__animated animate__bounceInUp ">
+                                        <div className="rightAnswer">
+                                            <h1 className="correctAnswer">Score!!</h1>
+                                            <div>{actualAnswer}</div>
+                                            <div> <img className="actualPlayer"src={actualPicture} alt="Player Photo" /> </div>
+                                        </div>
+                                    </div>
+                :
                                     <div className="wrongAnswer">
                                         <h1>Wrong Answer</h1>
                                     </div>
-                            }
-                        </div>
+                                }
+                </div>
+                    
+                  
 
-                }
             </div>
+
+            
+
+
+
+
 
         </div>
     )
@@ -107,3 +149,5 @@ function Generator() {
 
 
 export default Generator;
+
+
