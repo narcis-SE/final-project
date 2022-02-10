@@ -7,11 +7,7 @@
     margin: 10px;
 }
 
-.StandingList tr{
-    width: 386.45px;
-    height: 42px;
-}
 
 .StandingList td{
-    height: 42px;
+    height: 42px !important;
 }

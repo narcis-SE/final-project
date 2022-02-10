@@ -16,7 +16,7 @@ function App() {
     <div className="App">
         <Router>
         <div className="header">
-          <h1>NBA GALAXY</h1>
+          <h1 className="project-name">NBA GALAXY</h1>
             <nav className="nav">
               <ul>
                 <li>
