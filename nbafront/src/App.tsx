@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Main } from './components/Main';
 import { Standings } from './models/Standings';
-import Triviaheader from './components/Triviaheader';
 
 
 
