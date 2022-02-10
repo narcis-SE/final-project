@@ -50,11 +50,9 @@ export const Main = () => {
 
     return(
         <div className="Main">
-            <Header/>
             {/* Could be a component herefor nav links and header stuff */}
             <ArticleList articles={articles}/>
             <StandingsList standings={standings}/>          
-            <Generator/>
         </div>
     )
 }
