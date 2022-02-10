@@ -25,11 +25,11 @@ export const Main = () => {
 
 
 
-    // useEffect(()=>{
-    //     fetchStandings().then(
-    //         standings=>setStandings(standings.slice(0,30))
-    //     )
-    // }, [])
+    useEffect(()=>{
+        fetchStandings().then(
+            standings=>setStandings(standings.slice(0,30))
+        )
+    }, [])
 
     // useEffect(()=>{ 
     //     const interval = setInterval(()=>{
