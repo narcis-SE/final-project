@@ -1,10 +1,27 @@
 .ArticleList{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    /* overflow-x: hidden; */
+    overflow-y: scroll;
+    /* padding: 30px; */
+    /* scroll-snap-type: y mandatory;  */
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden;
+    overflow-x: scroll; */
+    /* scroll-snap-align: center; */
+    /* overflow-y: scroll; */
+    /* overflow-x: scroll; */
+}
+
+
+
     /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding-left: 10px; */
-    border: 1px solid red;
-}
+    /* border: 1px solid red; */
 
 .ArticleList h1{
     padding: 100px;
