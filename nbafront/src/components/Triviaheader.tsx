@@ -1,7 +1,7 @@
 import React, {useEffect, useState, FormEvent} from 'react';
-import "./header.css"
+import "./triviaheader.css"
 
-function Header(){
+function Triviaheader(){
     let headPicture = "https://www.freewebheaders.com/wp-content/gallery/basketball/basketball-rims-header.jpg"
     const [picture, setPicture] = useState
     ("https://media.istockphoto.com/photos/basketball-player-makes-slam-dunk-picture-id539208441?k=20&m=539208441&s=612x612&w=0&h=vwkRKbqLc35zfA5DVI_h58-a7jN9_ixbcfyKS4hfuUM=");
@@ -35,4 +35,4 @@ function Header(){
     )
 }
 
-export default Header;
+export default Triviaheader;

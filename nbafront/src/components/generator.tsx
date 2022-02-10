@@ -4,6 +4,8 @@ import {fetchQuestions} from "../services/TriviaServices";
 import {Question} from "../models/Question";
 import './generator.css';
 import 'animate.css';
+import Triviaheader from './Triviaheader';
+
 
 
 function Generator() {
@@ -66,7 +68,9 @@ function nextQuestion() {
 
 
     return(
+        
         <div className="wholeBackground">
+        <Triviaheader />
 
             <div className="underHeader">
 

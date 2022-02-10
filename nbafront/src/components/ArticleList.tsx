@@ -10,6 +10,7 @@ export const ArticleList = ({articles}: Props) =>{
     return(
         <div className="ArticleList">
             {articles.map((articles,i)=> <Articles key={i} article={articles}/>)}
+            
         </div>
     )
 }
