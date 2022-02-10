@@ -4,6 +4,7 @@ import {fetchQuestions} from "../services/TriviaServices";
 import {Question} from "../models/Question";
 import './generator.css';
 import 'animate.css';
+import Triviaheader from './Triviaheader';
 
 
 function Generator() {
@@ -17,6 +18,8 @@ function Generator() {
     const [rightAnswer, setRightAnswer] = useState(false);
     const [scoreCounter, setScoreCounter] = useState(0);
     const [hint, setHint] = useState("");
+    
+    const [display, setDisplay] = useState("wrongAnswer");
 
 
     useEffect( ()=> {
@@ -36,6 +39,7 @@ function Generator() {
         setActualPicture(randomQuestion.answer[1].image);
         setHint(randomQuestion.hint);
         setUserAnswer("");
+        setDisplay("wrongAnswer")
         setWaitingForAnswer(true);
         setRightAnswer(false);
     };
@@ -57,6 +61,7 @@ function Generator() {
             setScoreCounter(scoreCounter + 1)
         } else {
             setRightAnswer(false);
+            setDisplay("show")
         }
     }
 
@@ -67,7 +72,7 @@ function nextQuestion() {
 
     return(
         <div className="wholeBackground">
-
+        <Triviaheader />
             <div className="underHeader">
 
 
@@ -117,8 +122,7 @@ function nextQuestion() {
 
                 }
                 </div>
-                                {
-                                    rightAnswer? 
+                                {rightAnswer? 
                                     <div className="rightAnswerHolder animate__animated animate__bounceInUp ">
                                         <div className="rightAnswer">
                                             <h1 className="correctAnswer">Score!!</h1>
@@ -126,10 +130,13 @@ function nextQuestion() {
                                             <div> <img className="actualPlayer"src={actualPicture} alt="Player Photo" /> </div>
                                         </div>
                                     </div>
-                :
-                                    <div className="wrongAnswer">
-                                        <h1>Wrong Answer</h1>
-                                    </div>
+                : userAnswer ? 
+                                    <div className={display}>
+                                        <h1>Air Ball! The correct answer was {actualAnswer}</h1>
+                                        <img src="./airballGif.webp" alt="" className="gif"/>
+                                    </div> 
+                                    :
+                                    <div></div>
                                 }
                 </div>
                     

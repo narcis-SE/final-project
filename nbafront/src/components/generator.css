@@ -20,6 +20,8 @@
 .rightAnswerHolder {
     width: 100%;
     border: 3px solid white;
+    margin-left: 55px;
+
 }
 
 .rightAnswer {
@@ -43,7 +45,7 @@
     height: 300px;
     width: 70%;
     border-radius: 40px;
-    
+    margin-right: 80px;
 }
 
 .hint {
@@ -75,10 +77,18 @@
     font-family: Lora;
     color: rgb(188, 223, 188);
     font-size: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .wrongAnswer {
     display: none;
+    border: 2px solid red;
+    background-color: gray;
+}
+
+.show{
+    display: block;
     border: 2px solid red;
     background-color: gray;
 }
@@ -119,9 +129,12 @@
 .blurWords 
 
 .answerModal {
-
     border: solid 5px yellow;
     width: 50%;
+}
+
+.gif{
+    margin-right: 105px;
 }
 
 #questionAnswer {
@@ -271,3 +284,31 @@
             }
         }
 
+@media screen and (max-width: 768px) {
+
+    .rightAnswerHolder {
+        width: 75%;
+    }
+    #questionAnswer{
+        flex-direction: column;
+    }
+    .question{
+        width: 100%;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    #answer{
+        width: 100%;
+    }
+    .answer{
+        width: 100%;
+    }
+    .blurDiv{
+        margin-top: 15px;
+    }
+    .gif{
+        margin-right: 15px;
+    }
+}
