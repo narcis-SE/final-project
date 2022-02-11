@@ -16,7 +16,7 @@ function App() {
     <div className="App">
         <Router>
         <div className="header">
-          <h1 className="project-name">NBA GALAXY</h1>
+        <img src="./NBA GALAXY.gif" height={200} width={250}/>
             <nav className="nav">
               <ul>
                 <li>
@@ -27,7 +27,7 @@ function App() {
                 </li>
               </ul>
             </nav>
-          <img src="./basketball-sports.gif" height={100} width={100}/>
+          <img src="./NBA GALAXY.gif" height={200} width={250}/>
         </div>
         <Routes>
           <Route path="/" element={<Main />}/>
