@@ -29,8 +29,10 @@
 }
 
 a {
-    color: rgb(226, 106, 14) !important;
+    color: rgb(170, 66, 34) !important;
+    text-decoration: none !important;
     font-size: 20px;
+    font-weight: 700;
 }
 
 .nav {
