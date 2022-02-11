@@ -1,6 +1,5 @@
 import { Standings } from "../models/Standings";
 import "./StandingsList.css"
-import { Standing } from "./Standing";
 import Table from 'react-bootstrap/Table'
 export interface Prop{
     standings: Standings[]

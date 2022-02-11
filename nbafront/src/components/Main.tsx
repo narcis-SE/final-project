@@ -1,12 +1,15 @@
 import { fetchNbaNews } from "../services/NbaApiServices";
 import { useState, useEffect } from "react";
 import { News } from "../models/News";
-import { Header } from "./Header";
 import { ArticleList } from "./ArticleList";
 import Generator from "./generator";
 import { Standings } from "../models/Standings";
 import { fetchStandings } from "../services/StandingsServices";
 import { StandingsList } from "./StandingsList";
+import { fetchSpreads } from "../services/SpreadApiServices";
+import { BetData } from "../models/Spreads";
+import { SpreadList } from "./SpreadList";
+
 
 
 interface NewsProp{
@@ -17,14 +20,19 @@ interface StandingProp{
     standing: Standings[]
 }
 
+interface BetProp{
+    data: BetData[]
+}
+
 
 
 export const Main = () => {
     const[articles, setArticle] = useState<News[]>([]);
     const[standings, setStandings] = useState<Standings[]>([])
+    const[spreads, setSpreads] = useState<BetData[]>([])
 
 
-
+    //Standings display *****
     // useEffect(()=>{
     //     fetchStandings().then(
     //         standings=>setStandings(standings.slice(0,30))
@@ -41,10 +49,15 @@ export const Main = () => {
     // }, [])
 
     useEffect(()=>{
+        fetchSpreads().then(
+            spreads=>setSpreads(spreads)
+        )
+    }, [])
+
+    useEffect(()=>{
         fetchNbaNews().then(
             article=>setArticle(article)
         )
-        console.log(articles);
     }, [])
 
 
@@ -52,7 +65,8 @@ export const Main = () => {
         <div className="Main">
             {/* Could be a component herefor nav links and header stuff */}
             <ArticleList articles={articles}/>
-            <StandingsList standings={standings}/>          
+            <StandingsList standings={standings}/>
+            <SpreadList spreads={spreads}/>          
         </div>
     )
 }
