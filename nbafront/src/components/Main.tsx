@@ -36,8 +36,8 @@ export const Main = () => {
     const[YesterdaysScores, setYesterdaysScores] = useState<Scores[]>([]);
     const[TwoDaysAgoScores, setTwoDaysAgoScores] = useState<Scores[]>([]);
     const[articles, setArticle] = useState<News[]>([]);
-    const[standings, setStandings] = useState<Standings[]>([])
-    const[spreads, setSpreads] = useState<BetData[]>([])
+    const[standings, setStandings] = useState<Standings[]>([]);
+    const[spreads, setSpreads] = useState<BetData[]>([]);
 
 
     //Standings display *****
@@ -65,7 +65,7 @@ export const Main = () => {
             YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
         )
         console.log(YesterdaysScores);
-    }, [])
+    }, []);
     
     useEffect(()=>{
         fetchTwoDaysAgoScores().then(
@@ -92,10 +92,6 @@ export const Main = () => {
             <footer>
                 <p>Powered by: <a href="https://rapidapi.com/savey03/api/nba-latest-news/">NBA Latest News API</a> and <a href="https://www.api-basketball.com/documentation">API-Basketball</a> and <a href="https://www.balldontlie.io/#introduction">balldontline API</a></p>
             </footer>
-
-          
-
-
         </div>
     )
 }
