@@ -1,7 +1,8 @@
 
 
 .App{
-    background-color: rgba(69, 130, 228, 0.952);
+    background-image: url("../public/galaxy_background.jpeg");
+    background-size: cover;
 }
 
 .Header{
@@ -28,8 +29,17 @@
     justify-content: space-between;
 }
 
+.nav>ul {
+    list-style: none;
+    padding-left: 8rem !important;
+}
+
+footer{
+    color: white;
+}
+
 a {
-    color: rgb(170, 66, 34) !important;
+    color: white !important;
     text-decoration: none !important;
     font-size: 20px;
     font-weight: 700;

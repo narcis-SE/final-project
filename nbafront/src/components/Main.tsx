@@ -72,6 +72,9 @@ export const Main = () => {
             <ScoresList YesterdaysScores={YesterdaysScores} TwoDaysAgoScores={TwoDaysAgoScores}/>          
             <ArticleList articles={articles}/>
             <StandingsList standings={standings}/>
+            <footer>
+                <p>Powered by: <a href="https://rapidapi.com/savey03/api/nba-latest-news/">NBA Latest News API</a> and <a href="https://www.api-basketball.com/documentation">API-Basketball</a> and <a href="https://www.balldontlie.io/#introduction">balldontline API</a></p>
+            </footer>
         </div>
     )
 }
