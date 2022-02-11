@@ -64,6 +64,7 @@ function Generator() {
             setDisplay("show")
         }
     }
+    let wikiLink = 'https://en.wikipedia.org/wiki/'+actualAnswer;
 
 function nextQuestion() {
 
@@ -134,6 +135,7 @@ function nextQuestion() {
                                     <div className={display}>
                                         <h1>Air Ball! The correct answer was {actualAnswer}</h1>
                                         <img src="./airballGif.webp" alt="" className="gif"/>
+                                        <a href={wikiLink}>Who is this?</a>
                                     </div> 
                                     :
                                     <div></div>
