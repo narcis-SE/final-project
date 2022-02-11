@@ -1,5 +1,4 @@
 import { News } from "../models/News";
-import { Articles } from "./Articles";
 import "./ArticleList.css"
 
 import Carousel from 'react-multi-carousel';

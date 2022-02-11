@@ -83,12 +83,6 @@
     padding-top: 9em;
 }
 
-.row__poster:hover {
-
-    /* overflow-x: scroll; */
-    /* scroll-snap-align: center; */
-    /* scroll-snap-type: x mandatory; */
-}
 
 .headlineContainer {
     width: 103%;
