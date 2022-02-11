@@ -6,9 +6,16 @@ import Generator from "./generator";
 import { Data, Standings } from "../models/Standings";
 import { fetchStandings } from "../services/StandingsServices";
 import { StandingsList } from "./StandingsList";
+
+import { fetchSpreads } from "../services/SpreadApiServices";
+import { BetData } from "../models/Spreads";
+import { SpreadList } from "./SpreadList";
+
+
 import { fetchTwoDaysAgoScores, fetchYesterdayScores } from "../services/ScoresServices";
 import { Scores } from "../models/Scores";
 import ScoresList from "./ScoresList";
+
 
 
 interface NewsProp{
@@ -19,6 +26,10 @@ interface StandingProp{
     standing: Standings[]
 }
 
+interface BetProp{
+    data: BetData[]
+}
+
 
 
 export const Main = () => {
@@ -26,9 +37,10 @@ export const Main = () => {
     const[TwoDaysAgoScores, setTwoDaysAgoScores] = useState<Scores[]>([]);
     const[articles, setArticle] = useState<News[]>([]);
     const[standings, setStandings] = useState<Standings[]>([])
+    const[spreads, setSpreads] = useState<BetData[]>([])
 
 
-
+    //Standings display *****
     // useEffect(()=>{
     //     fetchStandings().then(
     //         standings=>setStandings(standings.slice(0,30))
@@ -45,6 +57,10 @@ export const Main = () => {
     // }, [])
 
     useEffect(()=>{
+
+        fetchSpreads().then(
+            spreads=>setSpreads(spreads)
+        )
         fetchYesterdayScores().then(
             YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
         )
@@ -56,13 +72,13 @@ export const Main = () => {
             TwoDaysAgoScores=>setTwoDaysAgoScores(TwoDaysAgoScores)
         )
         console.log(TwoDaysAgoScores);
+
     }, [])
 
     useEffect(()=>{
         fetchNbaNews().then(
             article=>setArticle(article)
         )
-        console.log(articles);
     }, [])
 
 
@@ -72,6 +88,8 @@ export const Main = () => {
             <ScoresList YesterdaysScores={YesterdaysScores} TwoDaysAgoScores={TwoDaysAgoScores}/>          
             <ArticleList articles={articles}/>
             <StandingsList standings={standings}/>
+            <SpreadList spreads={spreads}/>          
+
         </div>
     )
 }
