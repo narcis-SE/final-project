@@ -58,9 +58,9 @@ export const Main = () => {
 
     useEffect(()=>{
 
-        fetchSpreads().then(
-            spreads=>setSpreads(spreads)
-        )
+        // fetchSpreads().then(
+        //     spreads=>setSpreads(spreads)
+        // )
         fetchYesterdayScores().then(
             YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
         )
