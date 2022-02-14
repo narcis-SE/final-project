@@ -15,6 +15,9 @@ import { SpreadList } from "./SpreadList";
 import { fetchTwoDaysAgoScores, fetchYesterdayScores } from "../services/ScoresServices";
 import { Scores } from "../models/Scores";
 import ScoresList from "./ScoresList";
+import { Events } from "../models/Tickets";
+import { fetchTickets } from "../services/TicketsServices";
+import Tickets from "./Tickets";
 
 
 
@@ -80,6 +83,7 @@ export const Main = () => {
             article=>setArticle(article)
         )
     }, [])
+    
 
 
     return(
