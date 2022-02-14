@@ -16,8 +16,11 @@
     margin-bottom: 0px;
 }
 
-
-@media screen and (max-width: 1310px) {
-
+.scoresTitle>h3 {
+    margin: 5px;
+    color: white;
 }
+
+
+
 
