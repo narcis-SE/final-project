@@ -41,11 +41,11 @@ export const Main = () => {
 
 
     //Standings display *****
-    // useEffect(()=>{
-    //     fetchStandings().then(
-    //         standings=>setStandings(standings.slice(0,30))
-    //     )
-    // }, [])
+    useEffect(()=>{
+        fetchStandings().then(
+            standings=>setStandings(standings.slice(0,30))
+        )
+    }, [])
 
     // useEffect(()=>{ 
     //     const interval = setInterval(()=>{
@@ -58,9 +58,9 @@ export const Main = () => {
 
     useEffect(()=>{
 
-        // fetchSpreads().then(
-        //     spreads=>setSpreads(spreads)
-        // )
+        fetchSpreads().then(
+            spreads=>setSpreads(spreads)
+        )
         fetchYesterdayScores().then(
             YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
         )
@@ -72,7 +72,6 @@ export const Main = () => {
             TwoDaysAgoScores=>setTwoDaysAgoScores(TwoDaysAgoScores)
         )
         console.log(TwoDaysAgoScores);
-
     }, [])
 
     useEffect(()=>{
