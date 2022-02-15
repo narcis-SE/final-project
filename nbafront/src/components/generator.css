@@ -312,12 +312,17 @@
     }
     .answer{
         width: 100%;
+        transform: translateY(0px);
     }
     .blurDiv{
-        margin-top: 15px;
+        margin-top: 60px;
     }
     .gif{
         margin-right: 15px;
+    }
+
+    .answer:hover{
+        transform: translateY(0px);
     }
 }
 
