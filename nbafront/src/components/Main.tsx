@@ -43,45 +43,63 @@ export const Main = () => {
     const[spreads, setSpreads] = useState<BetData[]>([]);
 
 
-    //Standings display *****
+    //Standings display with interval
     useEffect(()=>{
-        fetchStandings().then(
-            standings=>setStandings(standings.slice(0,30))
-        )
-    }, [])
+        const interval = setInterval(()=>{
+            fetchStandings().then(
+                standings=>setStandings(standings)
+            )
+        }, 3600000); //Hourly calls 3600000
+    },[])
+    //Normal Version
+    // useEffect(()=>{
+    //     fetchStandings().then(
+    //         standings=>setStandings(standings)
+    //     )
+    // })
 
-    // useEffect(()=>{ 
-    //     const interval = setInterval(()=>{
-    //         fetchStandings().then(
-    //             standings=>setStandings(standings)
-    //         )
-    //         console.log(standings);
-    //     }, 60000);
+    //Spreads Display with interval
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            fetchSpreads().then(
+                spreads=>setSpreads(spreads)
+            )
+        }, 10800000) //8 calls a day ~ still well below limit 500/month 10800000
+    }, [])
+    //Normal Version
+    // useEffect(()=>{
+    //     fetchSpreads().then(
+    //         spreads=>setSpreads(spreads)
+    //     ) 
     // }, [])
 
-    useEffect(()=>{
 
-        fetchSpreads().then(
-            spreads=>setSpreads(spreads)
-        )
-        fetchYesterdayScores().then(
-            YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
-        )
-        console.log(YesterdaysScores);
-    }, []);
-    
+    //Score Display
     useEffect(()=>{
         fetchTwoDaysAgoScores().then(
             TwoDaysAgoScores=>setTwoDaysAgoScores(TwoDaysAgoScores)
         )
-        console.log(TwoDaysAgoScores);
-    }, [])
-
-    useEffect(()=>{
-        fetchNbaNews().then(
-            article=>setArticle(article)
+        fetchYesterdayScores().then(
+            YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
         )
-    }, [])
+    }, []);
+
+
+
+    //Article Display
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            fetchNbaNews().then(
+                article=>setArticle(article)
+            )
+        }, 1728000) //50 calls a day, WELL below our limit of 10,0000/month 1728000
+    })
+    //Normal Version
+    // useEffect(()=>{
+    //     fetchNbaNews().then(
+    //         article=>setArticle(article)
+    //     )
+    // }, [])
     
 
 
