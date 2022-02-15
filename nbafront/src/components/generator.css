@@ -312,3 +312,20 @@
         margin-right: 15px;
     }
 }
+
+.mcBox {
+    background-color: #0ff;
+    border: solid 2px yellow;
+    height: 100%;
+    width: 100%;
+}
+
+.multipleChoice {
+    font-size: 35px;
+    color: aliceblue;
+    position: relative;
+}
+
+label {
+    color: white;
+}
