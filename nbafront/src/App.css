@@ -25,7 +25,25 @@
 
 .nav>ul {
     list-style: none;
-    padding-left: 8rem !important;
+    padding-left: 0rem !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav>ul>li {
+    border: 5px solid red;
+    padding: 5px;
+    background-color: black;
+}
+
+.nav>ul>li:hover {
+    transform: scale(1.4) translateY(35%);
+    transition : .5s;
+    box-shadow: 1px 1px 50px 20px rgb(248, 245, 89);
+}
+
+.nav>ul>li>a {
+    font-size: 30px;
 }
 
 footer{
@@ -40,9 +58,19 @@ a {
 }
 
 .nav {
-    width: 33vw;
+    display: block !important;
+    width: 63vw;
 }
 
 img {
     float: right;
+}
+
+@media screen and (max-width: 768px) {
+    .nav>ul {
+        display: block !important;
+    }
+    .nav>ul>li>a {
+        font-size: 23px;
+    }
 }
