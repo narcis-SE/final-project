@@ -43,6 +43,7 @@ export const Main = () => {
     const[spreads, setSpreads] = useState<BetData[]>([]);
 
 
+
     //Standings display with interval
     useEffect(()=>{
         const interval = setInterval(()=>{
@@ -111,7 +112,7 @@ export const Main = () => {
             <StandingsList standings={standings}/>
             <SpreadList spreads={spreads}/>
             <footer>
-                <p>Powered by: <a href="https://rapidapi.com/savey03/api/nba-latest-news/">NBA Latest News API</a> and <a href="https://www.api-basketball.com/documentation">API-Basketball</a> and <a href="https://www.balldontlie.io/#introduction">balldontline API</a></p>
+                <p>Powered by: <a href="https://rapidapi.com/savey03/api/nba-latest-news/">NBA Latest News API</a> -- <a href="https://www.api-basketball.com/documentation">API-Basketball</a> -- <a href="https://www.balldontlie.io/#introduction">balldontline API</a> -- <a href="https://developer.ticketmaster.com/products-and-docs/apis/getting-started/">TicketMaster API</a></p>
             </footer>
         </div>
     )
