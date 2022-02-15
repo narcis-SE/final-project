@@ -44,10 +44,12 @@ function Generator() {
         setRightAnswer(false);
     };
 
+    const url:string = process.env.REACT_APP_DATABASE || "";
+
     function SubmitHandler(e:FormEvent) {
         e.preventDefault();
         answerComparison();
-        axios.post('http://localhost:3999/game', {
+        axios.post(url, {
             oneQuestion,
             actualAnswer,
             userAnswer

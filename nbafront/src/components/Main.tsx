@@ -44,11 +44,11 @@ export const Main = () => {
 
 
     //Standings display *****
-    useEffect(()=>{
-        fetchStandings().then(
-            standings=>setStandings(standings.slice(0,30))
-        )
-    }, [])
+    // useEffect(()=>{
+    //     fetchStandings().then(
+    //         standings=>setStandings(standings.slice(0,30))
+    //     )
+    // }, [])
 
     // useEffect(()=>{ 
     //     const interval = setInterval(()=>{
@@ -59,23 +59,23 @@ export const Main = () => {
     //     }, 60000);
     // }, [])
 
-    useEffect(()=>{
+    // useEffect(()=>{
 
-        fetchSpreads().then(
-            spreads=>setSpreads(spreads)
-        )
-        fetchYesterdayScores().then(
-            YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
-        )
-        console.log(YesterdaysScores);
-    }, []);
+    //     fetchSpreads().then(
+    //         spreads=>setSpreads(spreads)
+    //     )
+    //     fetchYesterdayScores().then(
+    //         YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
+    //     )
+    //     console.log(YesterdaysScores);
+    // }, []);
     
-    useEffect(()=>{
-        fetchTwoDaysAgoScores().then(
-            TwoDaysAgoScores=>setTwoDaysAgoScores(TwoDaysAgoScores)
-        )
-        console.log(TwoDaysAgoScores);
-    }, [])
+    // useEffect(()=>{
+    //     fetchTwoDaysAgoScores().then(
+    //         TwoDaysAgoScores=>setTwoDaysAgoScores(TwoDaysAgoScores)
+    //     )
+    //     console.log(TwoDaysAgoScores);
+    // }, [])
 
     useEffect(()=>{
         fetchNbaNews().then(
@@ -93,7 +93,7 @@ export const Main = () => {
             <StandingsList standings={standings}/>
             <SpreadList spreads={spreads}/>
             <footer>
-                <p>Powered by: <a href="https://rapidapi.com/savey03/api/nba-latest-news/">NBA Latest News API</a> and <a href="https://www.api-basketball.com/documentation">API-Basketball</a> and <a href="https://www.balldontlie.io/#introduction">balldontline API</a></p>
+                <p>Powered by: <a href="https://rapidapi.com/savey03/api/nba-latest-news/">NBA Latest News API</a> -- <a href="https://www.api-basketball.com/documentation">API-Basketball</a> -- <a href="https://www.balldontlie.io/#introduction">balldontline API</a> -- <a href="https://developer.ticketmaster.com/products-and-docs/apis/getting-started/">TicketMaster API</a></p>
             </footer>
         </div>
     )
