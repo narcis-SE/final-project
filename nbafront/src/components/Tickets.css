@@ -19,6 +19,15 @@
     transition : .5s;
 }
 
+.searchBar {
+    text-align: center;
+}
+
+.searchHint {
+    color: white;
+    font-size: 20px;
+}
+
 @media screen and (max-width: 768px) {
     .ticketsBox {
         font-size: 30px;
