@@ -1,0 +1,13 @@
+.StandingList{
+    display: flex;
+    flex-direction: row;
+}
+
+.StandingList table{
+    margin: 10px;
+}
+
+
+.StandingList td{
+    height: 42px !important;
+}

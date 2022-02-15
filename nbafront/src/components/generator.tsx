@@ -8,6 +8,7 @@ import Triviaheader from "./Triviaheader";
 import { getEffectiveTypeParameterDeclarations } from "typescript";
 
 function Generator() {
+
   const [randomNum, setRandomNum] = useState(0);
   const [questionArray, setQuestionArray] = useState<Question[]>([]);
   const [oneQuestion, setOneQuestion] = useState("");
@@ -43,6 +44,8 @@ function Generator() {
       if (questionArray[wrongAnswers[i]].answer[0].name != actualAnswer) {
         multiContainer.push(questionArray[wrongAnswers[i]].answer[0].name);
       }
+
+
     };
     console.log(multiContainer);
     console.log(actualAnswer);
@@ -65,6 +68,11 @@ function Generator() {
         array[i] = array[j];
         array[j] = temp;
     }
+
+    let wikiLink = 'https://en.wikipedia.org/wiki/'+actualAnswer;
+
+function nextQuestion() {
+
 }
 
 
@@ -167,6 +175,7 @@ function Generator() {
                     {multiChoiceContainer.map((answers:string, i:number) => 
                          <label htmlFor={answers}>{answers}<input type="radio" name={answers} id={i.toString()} value={answers} onChange={(e)=>setUserAnswer(e.target.value)}/></label>
                     )}
+
 
                     
 

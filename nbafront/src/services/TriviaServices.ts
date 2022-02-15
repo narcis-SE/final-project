@@ -3,7 +3,7 @@ import {Question} from "../models/Question";
 
 
 
-const url:string = "http://localhost:3999/api";
+const url:string = process.env.REACT_APP_DATABASE || "";
 
 export function fetchQuestions(): Promise<Question[]> {
     return axios
