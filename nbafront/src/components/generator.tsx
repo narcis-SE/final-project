@@ -68,12 +68,11 @@ function Generator() {
         array[i] = array[j];
         array[j] = temp;
     }
+}
 
     let wikiLink = 'https://en.wikipedia.org/wiki/'+actualAnswer;
 
-function nextQuestion() {
 
-}
 
 
 
@@ -118,11 +117,11 @@ function nextQuestion() {
     e.preventDefault();
     answerComparison();
     console.log(userAnswer);
-    axios.post("http://localhost:3999/game", {
-      oneQuestion,
-      actualAnswer,
-      userAnswer,
-    });
+    // axios.post("http://localhost:3999/game", {
+    //   oneQuestion,
+    //   actualAnswer,
+    //   userAnswer,
+    // });
   }
 
   
@@ -167,14 +166,16 @@ function nextQuestion() {
               <div className="answerForm">
                 <form
                   onSubmit={SubmitHandler}
-                  action="localhost:3999/game"
-                  method="POST"
+                //   action="localhost:3999/game"
+                //   method="POST"
                 >
                   <div className="form-group ">
-
+                      <div className="answerChoices">
                     {multiChoiceContainer.map((answers:string, i:number) => 
-                         <label htmlFor={answers}>{answers}<input type="radio" name={answers} id={i.toString()} value={answers} onChange={(e)=>setUserAnswer(e.target.value)}/></label>
+                         <label htmlFor={i.toString()}>{answers}<input type="radio" name="answer" id={i.toString()} value={answers} onChange={(e)=>setUserAnswer(e.target.value)}/></label>
                     )}
+                    
+                    </div>
 
 
                     
@@ -227,6 +228,7 @@ function nextQuestion() {
             <div className={display}>
               <h1>Air Ball! The correct answer was {actualAnswer}</h1>
               <img src="./airballGif.webp" alt="" className="gif" />
+              <a href={wikiLink}>Who is this?</a>
             </div>
           ) : (
             <div></div>

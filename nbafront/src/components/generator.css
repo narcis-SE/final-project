@@ -210,6 +210,7 @@
     background-image: linear-gradient(to bottom right, #2d3436, rgb(26, 26, 26));
     height: 100px;
     box-sizing: border-box; 
+    width: 46em;
 }
 
 #answer {
@@ -238,13 +239,20 @@
     font-family: Lora;
     padding-right: 10px;
     border-radius: 10px;
+    transform: translateY(-95px);
     
+}
+
+.answerChoices {
+    display: flex;
+    flex-direction: column;
+    width: 14em;
 }
 
 .answer:hover {
     background-image: linear-gradient(to bottom right, rgb(13, 238, 13), green);
     border-radius: 50px;
-    transform: scale(1.2);
+    transform: scale(1.2) translateY(-95px);
     transition : .5s;
     color: white;
 }

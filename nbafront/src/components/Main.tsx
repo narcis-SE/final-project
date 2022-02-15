@@ -2,7 +2,7 @@ import { fetchNbaNews } from "../services/NbaApiServices";
 import { useState, useEffect } from "react";
 import { News } from "../models/News";
 import { ArticleList } from "./ArticleList";
-import Generator from "./generator";
+// import Generator from "./generator";
 import { Data, Standings } from "../models/Standings";
 import { fetchStandings } from "../services/StandingsServices";
 import { StandingsList } from "./StandingsList";
