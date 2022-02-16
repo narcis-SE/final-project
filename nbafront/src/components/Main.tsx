@@ -2,7 +2,7 @@ import { fetchNbaNews } from "../services/NbaApiServices";
 import { useState, useEffect } from "react";
 import { News } from "../models/News";
 import { ArticleList } from "./ArticleList";
-// import Generator from "./generator";
+import Generator from "./generator";
 import { Data, Standings } from "../models/Standings";
 import { fetchStandings } from "../services/StandingsServices";
 import { StandingsList } from "./StandingsList";
@@ -45,13 +45,13 @@ export const Main = () => {
 
 
     //Standings display with interval
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            fetchStandings().then(
-                standings=>setStandings(standings)
-            )
-        }, 3600000); //Hourly calls 3600000
-    },[])
+    // useEffect(()=>{
+    //     const interval = setInterval(()=>{
+    //         fetchStandings().then(
+    //             standings=>setStandings(standings)
+    //         )
+    //     }, 3600000); //Hourly calls 3600000
+    // },[])
     //Normal Version
     // useEffect(()=>{
     //     fetchStandings().then(
@@ -60,13 +60,13 @@ export const Main = () => {
     // })
 
     //Spreads Display with interval
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            fetchSpreads().then(
-                spreads=>setSpreads(spreads)
-            )
-        }, 10800000) //8 calls a day ~ still well below limit 500/month 10800000
-    }, [])
+    // useEffect(()=>{
+    //     const interval = setInterval(()=>{
+    //         fetchSpreads().then(
+    //             spreads=>setSpreads(spreads)
+    //         )
+    //     }, 10800000) //8 calls a day ~ still well below limit 500/month 10800000
+    // }, [])
     //Normal Version
     // useEffect(()=>{
     //     fetchSpreads().then(
@@ -83,18 +83,27 @@ export const Main = () => {
         fetchYesterdayScores().then(
             YesterdaysScores=>setYesterdaysScores(YesterdaysScores)
         )
+        fetchNbaNews().then(
+            article=>setArticle(article)
+        )
+        fetchSpreads().then(
+            spreads=>setSpreads(spreads)
+        )
+        fetchStandings().then(
+            standings=>setStandings(standings)
+        ) 
     }, []);
 
 
 
     //Article Display
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            fetchNbaNews().then(
-                article=>setArticle(article)
-            )
-        }, 1728000) //50 calls a day, WELL below our limit of 10,0000/month 1728000
-    })
+    // useEffect(()=>{
+    //     const interval = setInterval(()=>{
+    //         fetchNbaNews().then(
+    //             article=>setArticle(article)
+    //         )
+    //     }, 1728000) //50 calls a day, WELL below our limit of 10,0000/month 1728000
+    // })
     //Normal Version
     // useEffect(()=>{
     //     fetchNbaNews().then(
