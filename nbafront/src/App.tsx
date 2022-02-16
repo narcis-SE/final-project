@@ -4,9 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Main } from './components/Main';
 import { Standings } from './models/Standings';
-
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-
 import { BrowserRouter as Router, Route, Link, Navigate, Routes } from 'react-router-dom';
 import Generator from './components/generator';
 import Tickets from './components/Tickets';

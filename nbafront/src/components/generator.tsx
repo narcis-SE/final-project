@@ -2,8 +2,8 @@ import React, { useEffect, useState, FormEvent } from "react";
 import axios, { Axios } from "axios";
 import { fetchQuestions } from "../services/TriviaServices";
 import { Question } from "../models/Question";
-import "./generator.css";
 import "animate.css";
+import "./generator.css";
 import Triviaheader from "./Triviaheader";
 import { getEffectiveTypeParameterDeclarations } from "typescript";
 
