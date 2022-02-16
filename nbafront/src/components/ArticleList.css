@@ -72,7 +72,6 @@
     /* border-image: linear-gradient(45deg, rgb(15, 14, 14), #2d3436) 1; */
     border-radius: 12px;
     object-fit: contain;
-    width: 220px;
     height: 665px;
     margin-right: 10px;
     transition: transform 750ms;

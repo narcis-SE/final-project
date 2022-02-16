@@ -88,19 +88,19 @@ export const Main = () => {
 
 
     //Article Display
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            fetchNbaNews().then(
-                article=>setArticle(article)
-            )
-        }, 1728000) //50 calls a day, WELL below our limit of 10,0000/month 1728000
-    })
-    //Normal Version
     // useEffect(()=>{
-    //     fetchNbaNews().then(
-    //         article=>setArticle(article)
-    //     )
-    // }, [])
+    //     const interval = setInterval(()=>{
+    //         fetchNbaNews().then(
+    //             article=>setArticle(article)
+    //         )
+    //     }, 1728000) //50 calls a day, WELL below our limit of 10,0000/month 1728000
+    // })
+    //Normal Version
+    useEffect(()=>{
+        fetchNbaNews().then(
+            article=>setArticle(article)
+        )
+    }, [])
     
 
 
